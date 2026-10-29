@@ -1,4 +1,4 @@
-const API_URL = '/api';
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 const POLL_INTERVAL_MS = 2000;          // cek hasil tiap 2 detik
 const MAX_WAIT_MS = 5 * 60 * 1000;      // menyerah setelah 5 menit
