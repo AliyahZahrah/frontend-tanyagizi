@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* TANYAGIZI CUSTOM COLOR SYSTEM - semua warna disusun dari palet:
+   FDF4AF, A5E9DD, 6FBEB2, 34908B, EEEEEE, 6FCF97, 2FA084, 1F6F5F,
+   212121, 323232, 0D7377, 14FFEC, 062925, 044A42, 3A9188, B8E1DD.
+   Semua warna didefinisikan sebagai token tema Tailwind, sehingga
+   seluruh kelas warna yang sudah dipakai di komponen dan halaman
+   otomatis ikut berubah tanpa perlu mengubah konten atau JSX. */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* ---- Brand primary (teal utama TanyaGizi) ---- */
+  --color-primary: #0d7377;
+  --color-primary-foreground: #eeeeee;
+  --color-primary-50: #b8e1dd;
+  --color-primary-100: #a5e9dd;
+  --color-primary-200: #a5e9dd;
+  --color-primary-300: #6fbeb2;
+  --color-primary-400: #3a9188;
+  --color-primary-500: #0d7377;
+  --color-primary-600: #044a42;
+  --color-primary-700: #044a42;
+  --color-primary-800: #062925;
+  --color-primary-900: #062925;
+  --color-primary-950: #062925;
+
+  /* ---- Netral (menggantikan slate bawaan, bernuansa teal) ---- */
+  --color-slate-50: #eeeeee;
+  --color-slate-100: #eeeeee;
+  --color-slate-200: #b8e1dd;
+  --color-slate-300: #a5e9dd;
+  --color-slate-350: #6fbeb2;
+  --color-slate-400: #6fbeb2;
+  --color-slate-500: #3a9188;
+  --color-slate-600: #34908b;
+  --color-slate-700: #1f6f5f;
+  --color-slate-800: #323232;
+  --color-slate-850: #212121;
+  --color-slate-900: #044a42;
+  --color-slate-950: #062925;
+
+  /* ---- Aksen hijau (status positif / sukses) ---- */
+  --color-emerald-50: #b8e1dd;
+  --color-emerald-100: #a5e9dd;
+  --color-emerald-200: #6fcf97;
+  --color-emerald-300: #6fcf97;
+  --color-emerald-400: #6fcf97;
+  --color-emerald-500: #2fa084;
+  --color-emerald-600: #2fa084;
+  --color-emerald-700: #1f6f5f;
+  --color-emerald-800: #1f6f5f;
+  --color-emerald-900: #044a42;
+  --color-emerald-950: #062925;
+
+  /* ---- Aksen krem lembut (perhatian / catatan) ---- */
+  --color-amber-50: #fdf4af;
+  --color-amber-100: #fdf4af;
+  --color-amber-200: #fdf4af;
+  --color-amber-300: #fdf4af;
+  --color-amber-400: #fdf4af;
+  --color-amber-500: #fdf4af;
+  --color-amber-600: #1f6f5f;
+  --color-amber-700: #1f6f5f;
+  --color-amber-800: #1f6f5f;
+  --color-amber-900: #1f6f5f;
+  --color-amber-950: #062925;
+
+  /* ---- Aksen mint (kategori sekunder) ---- */
+  --color-teal-50: #b8e1dd;
+  --color-teal-100: #a5e9dd;
+  --color-teal-200: #a5e9dd;
+  --color-teal-300: #6fbeb2;
+  --color-teal-400: #6fbeb2;
+  --color-teal-500: #34908b;
+  --color-teal-600: #34908b;
+  --color-teal-700: #3a9188;
+  --color-teal-800: #1f6f5f;
+  --color-teal-900: #044a42;
+  --color-teal-950: #062925;
+
+  /* ---- Aksen cyan (kategori "target/tujuan") ---- */
+  --color-sky-50: #b8e1dd;
+  --color-sky-100: #a5e9dd;
+  --color-sky-200: #a5e9dd;
+  --color-sky-300: #6fbeb2;
+  --color-sky-400: #14ffec;
+  --color-sky-500: #14ffec;
+  --color-sky-600: #0d7377;
+  --color-sky-700: #044a42;
+  --color-sky-800: #044a42;
+  --color-sky-900: #062925;
+  --color-sky-950: #062925;
+
+  /* ---- Aksen graphite (kategori "peringatan/hindari") ---- */
+  --color-rose-50: #eeeeee;
+  --color-rose-100: #eeeeee;
+  --color-rose-200: #b8e1dd;
+  --color-rose-300: #eeeeee;
+  --color-rose-400: #b8e1dd;
+  --color-rose-500: #323232;
+  --color-rose-600: #212121;
+  --color-rose-700: #212121;
+  --color-rose-800: #212121;
+  --color-rose-900: #212121;
+  --color-rose-950: #323232;
+
+  /* ---- Sisa warna bawaan yang jarang dipakai, diarahkan ke krem ---- */
+  --color-orange-50: #fdf4af;
+  --color-orange-100: #fdf4af;
+  --color-orange-200: #fdf4af;
+  --color-orange-300: #fdf4af;
+  --color-orange-400: #fdf4af;
+  --color-orange-500: #fdf4af;
+  --color-stone-50: #eeeeee;
+  --color-stone-100: #eeeeee;
+
+  /* ---- Aksen neon cyan (toggle dark mode) ---- */
+  --color-indigo-400: #14ffec;
+  --color-indigo-500: #14ffec;
+  --color-indigo-600: #14ffec;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-slate-50 text-slate-900 transition-colors duration-300 antialiased dark:bg-slate-950 dark:text-slate-50;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #b8e1dd;
+    border-radius: 20px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #6fbeb2;
+  }
+
+  .animate-float-slow {
+    animation: tg-float 7s ease-in-out infinite;
+  }
+  .animate-float-slower {
+    animation: tg-float 10s ease-in-out infinite;
+  }
+  .animate-shimmer {
+    background-size: 200% auto;
+    animation: tg-shimmer 3.5s linear infinite;
+  }
+  .gradient-text-primary {
+    background-image: linear-gradient(90deg, #0d7377, #2fa084, #14ffec, #0d7377);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: tg-shimmer 6s linear infinite;
+  }
+}
+
+@keyframes tg-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(3deg); }
+}
+
+@keyframes tg-shimmer {
+  to { background-position: 200% center; }
+}
+
+/* Custom styles for chat bubbles */
+.prose {
+  @apply max-w-none;
+}
+
+.prose p {
+  @apply my-1;
+}
+
+.prose ul, .prose ol {
+  @apply my-2;
+}
+
+/* Ensure font is applied */
+:root {
+  font-family: var(--font-sans);
+}
+
+/* Custom styles for chat bubbles */
+.prose {
+  @apply max-w-none;
+}
+
+.prose p {
+  @apply my-1;
+}
+
+.prose ul, .prose ol {
+  @apply my-2;
+}
+
+/* Ensure font is applied */
+:root {
+  font-family: var(--font-sans);
+}
