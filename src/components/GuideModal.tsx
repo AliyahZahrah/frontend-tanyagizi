@@ -41,7 +41,8 @@ const GUIDELINES = [
   'Tekan tombol Kirim untuk mengirim pertanyaan.',
   'Sistem akan mencari informasi yang relevan dari knowledge base menggunakan metode Retrieval-Augmented Generation (RAG).',
   'Jawaban akan ditampilkan beserta sumber referensi yang digunakan.',
-  'Riwayat pertanyaan akan tersimpan secara otomatis pada akun pengguna yang telah login.',
+  // 'Riwayat pertanyaan akan tersimpan secara otomatis pada akun pengguna yang telah login.',
+  'Riwayat pertanyaan tidak tersimpan, sehingga percakapan akan hilang saat halaman dimuat ulang atau ditutup.',
   'Jawaban yang diberikan bersifat informatif dan tidak menggantikan konsultasi dengan tenaga kesehatan profesional.',
 ];
 
