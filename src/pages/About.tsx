@@ -22,6 +22,8 @@ import {
   ArrowUpRight
 } from 'lucide-react';
 import aliyah1 from '../assets/aliyah1.jpg';
+import untarLogo from '../assets/untar.png';
+import ftiUntarLogo from '../assets/ftiuntar.png';
 
 export default function About() {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -326,6 +328,84 @@ export default function About() {
                     />
                   </div>
                 </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* SECTION 1B: Informasi Skripsi (judul, dosen pembimbing, fakultas, program studi, dan logo) */}
+        <section className="bg-white dark:bg-slate-950 py-14 sm:py-18 border-b border-slate-200/70 dark:border-slate-800/80">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              variants={itemVariants}
+              className="space-y-6"
+            >
+              <div className="space-y-1.5">
+                <span className="text-xs font-bold text-primary uppercase tracking-widest">
+                  Tugas Akhir
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
+                  Informasi Skripsi
+                </h2>
+              </div>
+
+              <div className="gsap-card bg-slate-50/90 dark:bg-slate-900/90 rounded-2xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-xs space-y-6">
+                {/* Logo institusi (latar putih agar tetap terbaca pada mode gelap) */}
+                <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                  <div className="flex items-center h-14 sm:h-20 rounded-xl bg-white border border-slate-200/80 px-3 sm:px-5 shadow-xs">
+                    <img
+                      src={untarLogo}
+                      alt="Logo Universitas Tarumanagara"
+                      className="h-7 sm:h-11 w-auto object-contain"
+                    />
+                  </div>
+                  <div className="flex items-center h-14 sm:h-20 rounded-xl bg-white border border-slate-200/80 px-3 sm:px-5 shadow-xs">
+                    <img
+                      src={ftiUntarLogo}
+                      alt="Logo Fakultas Teknologi Informasi Universitas Tarumanagara"
+                      className="h-9 sm:h-14 w-auto object-contain"
+                    />
+                  </div>
+                </div>
+
+                {/* Judul skripsi */}
+                <div className="space-y-1.5">
+                  <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                    Judul Skripsi
+                  </p>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
+                    Sistem Tanya Jawab Informasi Gizi Kesehatan Masyarakat Berbahasa Indonesia Berbasis{' '}
+                    <em>Retrieval-Augmented Generation</em> Menggunakan BGE-M3 dan Qwen-3 (8B-Instruct)
+                  </h3>
+                </div>
+
+                {/* Dosen pembimbing, fakultas, program studi */}
+                <dl className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-5 border-t border-slate-200/80 dark:border-slate-800">
+                  <div className="space-y-1">
+                    <dt className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                      Dosen Pembimbing
+                    </dt>
+                    <dd className="text-sm sm:text-base font-semibold text-slate-900 dark:text-white">
+                      Dr. Bagus Mulyawan, S.Kom., M.M.
+                    </dd>
+                  </div>
+                  <div className="space-y-1">
+                    <dt className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                      Fakultas
+                    </dt>
+                    <dd className="text-sm sm:text-base font-semibold text-slate-900 dark:text-white">
+                      Teknologi Informasi
+                    </dd>
+                  </div>
+                  <div className="space-y-1">
+                    <dt className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                      Program Studi
+                    </dt>
+                    <dd className="text-sm sm:text-base font-semibold text-slate-900 dark:text-white">
+                      Teknik Informatika
+                    </dd>
+                  </div>
+                </dl>
               </div>
             </motion.div>
           </div>
