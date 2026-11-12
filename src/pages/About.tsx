@@ -358,8 +358,8 @@ export default function About() {
           </div>
         </section>
 
-        {/* SECTION 1B: Informasi Skripsi (latar sama dengan Tujuan Perancangan dan Batasan Rancangan) */}
-        <section className="bg-emerald-50/40 dark:bg-slate-900/60 py-14 sm:py-20 border-y border-emerald-100/70 dark:border-slate-800/80">
+        {/* SECTION 1B: Informasi Skripsi (latar putih agar kontras dengan header profil di atasnya) */}
+        <section className="bg-white dark:bg-slate-950 py-14 sm:py-20 border-b border-slate-200/70 dark:border-slate-800/80">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
             <motion.div
               variants={itemVariants}
@@ -386,7 +386,7 @@ export default function About() {
               {/* Kartu utama: logo institusi dan judul skripsi */}
               <motion.div
                 variants={itemVariants}
-                className="gsap-card bg-white dark:bg-slate-900/90 rounded-2xl p-6 sm:p-10 border border-emerald-100 dark:border-slate-800 shadow-xs flex flex-col items-center text-center gap-6 sm:gap-8"
+                className="gsap-card bg-slate-50/90 dark:bg-slate-900/90 rounded-2xl p-6 sm:p-10 border border-slate-200/80 dark:border-slate-800 shadow-xs flex flex-col items-center text-center gap-6 sm:gap-8"
               >
                 {/* Logo diletakkan pada pelat putih agar tetap terbaca pada mode gelap */}
                 <div className="inline-flex items-center gap-4 sm:gap-7 rounded-2xl bg-white border border-emerald-100 dark:border-white/10 px-4 sm:px-7 py-3.5 sm:py-4 shadow-xs">
@@ -410,7 +410,8 @@ export default function About() {
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
                     Sistem Tanya Jawab Informasi Gizi Kesehatan Masyarakat Berbahasa Indonesia Berbasis{' '}
-                    <em className="sm:whitespace-nowrap">Retrieval-Augmented Generation</em> Menggunakan BGE-M3 dan Qwen3-8B
+                    <em className="sm:whitespace-nowrap">Retrieval-Augmented Generation</em> Menggunakan BGE-M3 dan Qwen-3{' '}
+                    <span className="whitespace-nowrap">(8B-Instruct)</span>
                   </h3>
                 </div>
               </motion.div>
@@ -425,7 +426,7 @@ export default function About() {
                       variants={itemVariants}
                       whileHover={{ y: -6, scale: 1.02 }}
                       transition={{ duration: 0.25 }}
-                      className="gsap-card bg-white dark:bg-slate-900/90 rounded-2xl p-5 sm:p-6 border border-emerald-100 dark:border-slate-800 shadow-xs hover:shadow-xl hover:shadow-primary/5 hover:border-primary/40 flex items-center gap-4 transition-all duration-300 group cursor-default"
+                      className="gsap-card bg-slate-50/90 dark:bg-slate-900/90 rounded-2xl p-5 sm:p-6 border border-slate-200/80 dark:border-slate-800 shadow-xs hover:shadow-xl hover:shadow-primary/5 hover:border-primary/40 flex items-center gap-4 transition-all duration-300 group cursor-default"
                     >
                       <div className={`h-12 w-12 rounded-2xl flex items-center justify-center shrink-0 border ${info.badgeBg} shadow-xs group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
                         <Icon className="h-6 w-6" />
