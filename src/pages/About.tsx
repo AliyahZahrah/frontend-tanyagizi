@@ -19,7 +19,11 @@ import {
   AlertCircle,
   User,
   Sparkles,
-  ArrowUpRight
+  ArrowUpRight,
+  BookOpen,
+  UserCheck,
+  Building2,
+  Laptop
 } from 'lucide-react';
 import aliyah1 from '../assets/aliyah1.jpg';
 import untarLogo from '../assets/untar.png';
@@ -229,6 +233,27 @@ export default function About() {
     },
   ];
 
+  const thesisInfo = [
+    {
+      icon: UserCheck,
+      label: 'Dosen Pembimbing',
+      value: 'Dr. Bagus Mulyawan, S.Kom., M.M.',
+      badgeBg: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/80',
+    },
+    {
+      icon: Building2,
+      label: 'Fakultas',
+      value: 'Teknologi Informasi',
+      badgeBg: 'bg-sky-50 text-sky-700 dark:bg-sky-950/60 dark:text-sky-300 border-sky-200 dark:border-sky-800/80',
+    },
+    {
+      icon: Laptop,
+      label: 'Program Studi',
+      value: 'Teknik Informatika',
+      badgeBg: 'bg-teal-50 text-teal-700 dark:bg-teal-950/60 dark:text-teal-300 border-teal-200 dark:border-teal-800/80',
+    },
+  ];
+
   return (
     <div ref={rootRef} className="min-h-screen transition-colors duration-300 text-slate-900 dark:text-slate-100 selection:bg-primary/20">
       <motion.div
@@ -333,79 +358,90 @@ export default function About() {
           </div>
         </section>
 
-        {/* SECTION 1B: Informasi Skripsi (judul, dosen pembimbing, fakultas, program studi, dan logo) */}
-        <section className="bg-white dark:bg-slate-950 py-14 sm:py-18 border-b border-slate-200/70 dark:border-slate-800/80">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* SECTION 1B: Informasi Skripsi (latar sama dengan Tujuan Perancangan dan Batasan Rancangan) */}
+        <section className="bg-emerald-50/40 dark:bg-slate-900/60 py-14 sm:py-20 border-y border-emerald-100/70 dark:border-slate-800/80">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
             <motion.div
               variants={itemVariants}
+              className="text-center max-w-2xl mx-auto space-y-1.5"
+            >
+              <span className="text-xs font-bold text-primary uppercase tracking-widest">
+                Tugas Akhir
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
+                Informasi Skripsi
+              </h2>
+              <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400 font-medium">
+                Sistem ini dikembangkan sebagai tugas akhir di Universitas Tarumanagara
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
               className="space-y-6"
             >
-              <div className="space-y-1.5">
-                <span className="text-xs font-bold text-primary uppercase tracking-widest">
-                  Tugas Akhir
-                </span>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
-                  Informasi Skripsi
-                </h2>
-              </div>
-
-              <div className="gsap-card bg-slate-50/90 dark:bg-slate-900/90 rounded-2xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-xs space-y-6">
-                {/* Logo institusi (latar putih agar tetap terbaca pada mode gelap) */}
-                <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-                  <div className="flex items-center h-14 sm:h-20 rounded-xl bg-white border border-slate-200/80 px-3 sm:px-5 shadow-xs">
-                    <img
-                      src={untarLogo}
-                      alt="Logo Universitas Tarumanagara"
-                      className="h-7 sm:h-11 w-auto object-contain"
-                    />
-                  </div>
-                  <div className="flex items-center h-14 sm:h-20 rounded-xl bg-white border border-slate-200/80 px-3 sm:px-5 shadow-xs">
-                    <img
-                      src={ftiUntarLogo}
-                      alt="Logo Fakultas Teknologi Informasi Universitas Tarumanagara"
-                      className="h-9 sm:h-14 w-auto object-contain"
-                    />
-                  </div>
+              {/* Kartu utama: logo institusi dan judul skripsi */}
+              <motion.div
+                variants={itemVariants}
+                className="gsap-card bg-white dark:bg-slate-900/90 rounded-2xl p-6 sm:p-10 border border-emerald-100 dark:border-slate-800 shadow-xs flex flex-col items-center text-center gap-6 sm:gap-8"
+              >
+                {/* Logo diletakkan pada pelat putih agar tetap terbaca pada mode gelap */}
+                <div className="inline-flex items-center gap-4 sm:gap-7 rounded-2xl bg-white border border-emerald-100 dark:border-white/10 px-4 sm:px-7 py-3.5 sm:py-4 shadow-xs">
+                  <img
+                    src={untarLogo}
+                    alt="Logo Universitas Tarumanagara"
+                    className="h-7 sm:h-11 w-auto object-contain"
+                  />
+                  <span aria-hidden="true" className="w-px self-stretch bg-slate-200" />
+                  <img
+                    src={ftiUntarLogo}
+                    alt="Logo Fakultas Teknologi Informasi Universitas Tarumanagara"
+                    className="h-9 sm:h-14 w-auto object-contain"
+                  />
                 </div>
 
-                {/* Judul skripsi */}
-                <div className="space-y-1.5">
-                  <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
-                    Judul Skripsi
-                  </p>
+                <div className="space-y-3 max-w-3xl">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-primary dark:text-emerald-300 border border-emerald-200/70 dark:border-emerald-800/80 text-xs font-bold">
+                    <BookOpen className="h-3.5 w-3.5" />
+                    <span>Judul Skripsi</span>
+                  </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
                     Sistem Tanya Jawab Informasi Gizi Kesehatan Masyarakat Berbahasa Indonesia Berbasis{' '}
-                    <em>Retrieval-Augmented Generation</em> Menggunakan BGE-M3 dan Qwen-3 (8B-Instruct)
+                    <em className="sm:whitespace-nowrap">Retrieval-Augmented Generation</em> Menggunakan BGE-M3 dan Qwen-3{' '}
+                    <span className="whitespace-nowrap">(8B-Instruct)</span>
                   </h3>
                 </div>
+              </motion.div>
 
-                {/* Dosen pembimbing, fakultas, program studi */}
-                <dl className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-5 border-t border-slate-200/80 dark:border-slate-800">
-                  <div className="space-y-1">
-                    <dt className="text-xs font-semibold text-slate-500 dark:text-slate-400">
-                      Dosen Pembimbing
-                    </dt>
-                    <dd className="text-sm sm:text-base font-semibold text-slate-900 dark:text-white">
-                      Dr. Bagus Mulyawan, S.Kom., M.M.
-                    </dd>
-                  </div>
-                  <div className="space-y-1">
-                    <dt className="text-xs font-semibold text-slate-500 dark:text-slate-400">
-                      Fakultas
-                    </dt>
-                    <dd className="text-sm sm:text-base font-semibold text-slate-900 dark:text-white">
-                      Teknologi Informasi
-                    </dd>
-                  </div>
-                  <div className="space-y-1">
-                    <dt className="text-xs font-semibold text-slate-500 dark:text-slate-400">
-                      Program Studi
-                    </dt>
-                    <dd className="text-sm sm:text-base font-semibold text-slate-900 dark:text-white">
-                      Teknik Informatika
-                    </dd>
-                  </div>
-                </dl>
+              {/* Dosen pembimbing, fakultas, dan program studi */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {thesisInfo.map((info, idx) => {
+                  const Icon = info.icon;
+                  return (
+                    <motion.div
+                      key={idx}
+                      variants={itemVariants}
+                      whileHover={{ y: -6, scale: 1.02 }}
+                      transition={{ duration: 0.25 }}
+                      className="gsap-card bg-white dark:bg-slate-900/90 rounded-2xl p-5 sm:p-6 border border-emerald-100 dark:border-slate-800 shadow-xs hover:shadow-xl hover:shadow-primary/5 hover:border-primary/40 flex items-center gap-4 transition-all duration-300 group cursor-default"
+                    >
+                      <div className={`h-12 w-12 rounded-2xl flex items-center justify-center shrink-0 border ${info.badgeBg} shadow-xs group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <div className="space-y-0.5 min-w-0">
+                        <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                          {info.label}
+                        </p>
+                        <p className="text-sm sm:text-base font-bold text-slate-900 dark:text-white leading-snug group-hover:text-primary transition-colors">
+                          {info.value}
+                        </p>
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
             </motion.div>
           </div>
@@ -436,6 +472,9 @@ export default function About() {
                 </p>
                 <p>
                   Dengan memanfaatkan teknologi Retrieval-Augmented Generation (RAG), sistem mampu menghasilkan jawaban yang relevan berdasarkan basis pengetahuan yang telah disiapkan. Pengembangan website ini bertujuan untuk meningkatkan literasi gizi masyarakat serta mendukung penyebaran informasi kesehatan yang lebih luas, mudah diakses, dan terpercaya.
+                </p>
+                <p>
+                  Website ini ditujukan bagi masyarakat umum dari kelompok remaja (12 - 17 tahun), dewasa (18 - 59 tahun), dan lansia (60 tahun atau lebih) yang ingin mengetahui informasi tentang gizi dan gizi kesehatan masyarakat.
                 </p>
               </div>
             </motion.div>
