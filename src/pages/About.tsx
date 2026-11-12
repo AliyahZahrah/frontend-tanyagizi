@@ -411,7 +411,7 @@ export default function About() {
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
                     Sistem Tanya Jawab Informasi Gizi Kesehatan Masyarakat Berbahasa Indonesia Berbasis{' '}
                     <em className="sm:whitespace-nowrap">Retrieval-Augmented Generation</em> Menggunakan BGE-M3 dan Qwen3{''}
-                    <span className="whitespace-nowrap">(-8B)</span>
+                    <span className="whitespace-nowrap">-8B</span>
                   </h3>
                 </div>
               </motion.div>
